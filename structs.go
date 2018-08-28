@@ -2,6 +2,8 @@ package botlister
 
 import "time"
 
+// User is a user of the site, can own bots.
+// Bots will be empty if taken from a FetchBot or FetchAllBots.
 type User struct {
 	Username      string    `json:"username"`
 	Discriminator string    `json:"discriminator"`
@@ -12,6 +14,9 @@ type User struct {
 	Bots          []Bot     `json:"bots"`
 }
 
+// Stats is the statistics of a bot.
+// To send stats, online does not need to be set.
+// ShardID is optional.
 type Stats struct {
 	Online           bool `json:"online"`
 	ShardID          uint `json:"shard_id"`
@@ -20,6 +25,8 @@ type Stats struct {
 	VoiceConnections uint `json:"voice_connections"`
 }
 
+// Bot is a bot from the site.
+// Owner will be empty if taken from FetchUser or FetchUserBots.
 type Bot struct {
 	ID               string    `json:"id"`
 	Username         string    `json:"username"`

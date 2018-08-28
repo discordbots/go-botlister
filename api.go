@@ -9,12 +9,14 @@ import (
 	"strconv"
 )
 
+// API the struct of the API instance containing the tokens and http client.
 type API struct {
 	BotToken  string
 	UserToken string
 	Client    *http.Client
 }
 
+// NewAPI creates a new instance of API with the provided tokens.
 func NewAPI(BotToken string, UserToken string) *API {
 	return &API{
 		BotToken:  BotToken,
