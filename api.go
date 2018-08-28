@@ -27,7 +27,7 @@ func NewAPI(BotToken string, UserToken string) *API {
 
 func (a *API) doRequest(method string, user bool, endpoint string, body interface{}, output interface{}) error {
 
-	var reader io.Reader = nil
+	var reader io.Reader
 
 	if body != nil {
 		data, err := json.Marshal(body)
